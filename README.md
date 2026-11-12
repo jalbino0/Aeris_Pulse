@@ -1,301 +1,572 @@
 # Aeris Pulse
 
-**Inteligência atmosférica para decisões mais conscientes.**
+<p align="center">
+  <img src="assets/images/aeris_logo.png" alt="Logotipo Aeris Pulse" width="120">
+</p>
 
-O **Aeris Pulse** é um aplicativo mobile desenvolvido em **Flutter e Dart**, voltado ao monitoramento da qualidade do ar, à análise de poluentes atmosféricos, ao acompanhamento de previsões ambientais e à identificação de condições que possam exigir maior atenção.
+<p align="center">
+  <strong>Inteligência no ar. Clareza na vida.</strong>
+</p>
 
-A solução reúne informações ambientais em uma interface intuitiva e personalizável, permitindo que os usuários acompanhem diferentes cidades brasileiras, visualizem tendências, consultem alertas preditivos e gerenciem suas preferências.
+O **Aeris Pulse** é um aplicativo mobile desenvolvido em **Flutter e Dart** para monitoramento da qualidade do ar, análise de poluentes atmosféricos, acompanhamento de previsões ambientais e identificação de condições que possam exigir atenção.
 
-O projeto foi desenvolvido para a **Global Solution 2026.2 da FIAP**, no curso de Ciência da Computação, integrando desenvolvimento mobile, serviços em nuvem, análise de dados ambientais e persistência local.
+A solução reúne informações ambientais em uma interface intuitiva e personalizável, permitindo acompanhar diferentes cidades brasileiras, visualizar tendências, consultar alertas preditivos e gerenciar preferências.
+
+O projeto foi desenvolvido para a **Global Solution 2026.2 da FIAP**, no desafio **Territory Predictive Insights**, integrando desenvolvimento mobile, análise de dados ambientais, serviços em nuvem e persistência local.
 
 ---
 
-## Sobre o projeto
+## 1. Problema, público-alvo e impacto social
 
-A qualidade do ar é um fator importante para o meio ambiente e para a saúde da população. Entretanto, informações sobre concentrações de poluentes e previsões atmosféricas nem sempre são apresentadas de maneira centralizada, acessível e fácil de interpretar.
+### Contextualização do problema
 
-O Aeris Pulse foi desenvolvido com a proposta de aproximar essas informações do cotidiano das pessoas.
+A qualidade do ar é um fator importante para o meio ambiente, para a saúde pública e para a qualidade de vida da população.
 
-Por meio de consultas a serviços ambientais externos, o aplicativo apresenta estimativas de concentrações atmosféricas, tendências temporais e análises de condições futuras.
+As concentrações de poluentes atmosféricos podem variar de acordo com a cidade, o horário, as condições meteorológicas e outros fatores ambientais.
 
-Além de consultar os dados de uma cidade, o usuário pode acompanhar outras localidades, salvar seus favoritos e personalizar a forma como deseja receber e visualizar informações.
+Apesar da existência de plataformas que disponibilizam informações atmosféricas, a interpretação desses dados pode ser complexa para pessoas que não possuem conhecimentos técnicos sobre o assunto.
 
-O aplicativo também permite utilização sem cadastro, oferecendo sincronização opcional de preferências para usuários autenticados.
+Entre os principais desafios identificados estão:
 
-## Problema e motivação
+- Dificuldade de acompanhar informações ambientais de diferentes localidades.
+- Necessidade de interpretar concentrações de poluentes de maneira contextualizada.
+- Ausência de informações facilmente compreensíveis sobre tendências futuras.
+- Dificuldade de identificar períodos que possam apresentar condições ambientais desfavoráveis.
+- Necessidade de distinguir estimativas, previsões e informações demonstrativas.
+- Importância de oferecer uma experiência acessível, independentemente da criação de uma conta.
 
-As condições atmosféricas podem variar de acordo com a localidade, o horário e diversos fatores ambientais.
+Esses desafios motivaram o desenvolvimento de uma aplicação capaz de **centralizar, organizar e contextualizar informações sobre a qualidade do ar**.
 
-Embora existam plataformas que disponibilizam informações sobre qualidade do ar, esses dados podem ser difíceis de interpretar sem um contexto adequado.
+### Público-alvo
 
-Entre os principais desafios considerados no desenvolvimento do projeto, destacam-se:
+O Aeris Pulse foi desenvolvido para atender principalmente:
 
-- A necessidade de consultar informações ambientais de diferentes localidades.
-- A dificuldade de interpretar concentrações de poluentes isoladamente.
-- A importância de acompanhar mudanças e tendências ao longo do tempo.
-- A necessidade de distinguir condições observadas ou estimadas de projeções futuras.
-- A possibilidade de apresentar avisos ambientais de maneira compreensível.
-- A necessidade de disponibilizar uma experiência acessível, com ou sem cadastro.
+**Cidadãos e moradores de centros urbanos:** pessoas interessadas em acompanhar as condições ambientais das localidades em que vivem, trabalham ou realizam suas atividades.
 
-Esses desafios motivaram a criação de uma aplicação capaz de **centralizar, organizar e contextualizar informações atmosféricas**.
+**Pessoas sensíveis às condições ambientais:** usuários que desejam consultar informações sobre concentrações atmosféricas e períodos potencialmente desfavoráveis, sem substituir orientações médicas ou oficiais.
 
-## Objetivos do projeto
+**Estudantes e pesquisadores:** pessoas interessadas em explorar dados ambientais, séries temporais e tendências atmosféricas.
+
+**Gestores e profissionais interessados em informações territoriais:** usuários que necessitam consultar indicadores e projeções ambientais para apoiar análises e decisões humanas.
 
 ### Objetivo geral
 
-Desenvolver um aplicativo mobile que permita consultar e interpretar informações sobre qualidade do ar, utilizando dados e estimativas atmosféricas para apoiar o acompanhamento de condições ambientais em diferentes cidades.
+Desenvolver um aplicativo mobile capaz de consultar, processar e apresentar informações sobre qualidade do ar, utilizando dados e estimativas atmosféricas para apoiar o acompanhamento de condições ambientais em diferentes cidades.
 
 ### Objetivos específicos
 
-- Consultar informações de qualidade do ar a partir de fontes ambientais externas.
-- Apresentar concentrações estimadas dos principais poluentes atmosféricos.
-- Organizar informações históricas e tendências em representações visuais.
-- Disponibilizar previsões ambientais para diferentes horizontes temporais.
-- Identificar condições preditivas que possam exigir atenção.
-- Permitir o acompanhamento e gerenciamento de cidades favoritas.
-- Implementar autenticação e sincronização opcional de preferências.
-- Utilizar armazenamento local para persistência e cache.
-- Disponibilizar notificações ambientais locais no Android.
-- Desenvolver uma interface moderna, responsiva e adaptável aos temas claro e escuro.
-- Validar regras de negócio e componentes por meio de testes automatizados.
+- Consultar dados ambientais disponibilizados por fontes externas.
+- Apresentar indicadores de qualidade do ar de forma compreensível.
+- Disponibilizar análises de concentrações e tendências de poluentes.
+- Permitir a consulta de previsões atmosféricas.
+- Identificar condições futuras que possam exigir atenção.
+- Apresentar alertas com justificativas, confiança e limitações.
+- Permitir o gerenciamento de cidades favoritas.
+- Disponibilizar autenticação e sincronização opcionais.
+- Utilizar armazenamento local e cache.
+- Oferecer personalização visual e configurações de notificações.
+- Validar funcionalidades por meio de testes automatizados.
+
+### Impacto social esperado
+
+O Aeris Pulse busca contribuir para a **democratização do acesso a informações ambientais**, apresentando dados técnicos de maneira mais acessível.
+
+A centralização das informações pode auxiliar cidadãos a compreender melhor as condições atmosféricas de suas cidades e consultar tendências antes de planejar determinadas atividades.
+
+A aplicação também busca estimular o interesse pela qualidade ambiental urbana e pelo uso de dados públicos como ferramentas de informação à sociedade.
+
+O impacto esperado está relacionado a:
+
+- Maior acessibilidade às informações atmosféricas.
+- Melhor compreensão dos indicadores ambientais.
+- Apoio ao planejamento individual diante de condições desfavoráveis.
+- Incentivo ao acompanhamento das condições ambientais locais.
+- Disponibilização de informações para diferentes cidades brasileiras.
+
+**O Aeris Pulse não realiza decisões automáticas de alto impacto.** Os indicadores, previsões e alertas possuem caráter informativo, e a decisão final permanece sob responsabilidade humana.
 
 ---
 
-## Solução proposta
+## 2. Integrantes
 
-O Aeris Pulse integra diferentes recursos em um único ambiente de monitoramento ambiental.
+O projeto foi desenvolvido pelos seguintes integrantes:
 
-A aplicação consulta serviços externos, processa as informações recebidas e apresenta os resultados de maneira organizada.
+| Integrante | Registro acadêmico |
+|---|---|
+| **João Pedro de Moura Albino** | **RM565323** |
+| **Kauê Silva Matheus** | **RM561675** |
+| **Giovanna Fernandes Pereira** | **RM565434** |
 
-O usuário pode selecionar a cidade que deseja monitorar, consultar os principais indicadores atmosféricos, acompanhar tendências e explorar projeções para períodos futuros.
+**Instituição:** FIAP — Faculdade de Informática e Administração Paulista
 
-As análises preditivas utilizam informações de previsões ambientais para identificar situações de atenção, enquanto o modo demonstrativo permite explorar cenários ilustrativos sem apresentá-los como ocorrências reais.
+**Curso:** Ciência da Computação
 
-A arquitetura também combina armazenamento local e sincronização em nuvem, possibilitando uma experiência personalizada de acordo com a forma de acesso escolhida.
+**Disciplina:** Cross-Platform Application Development
 
-### Principais diferenciais
+**Projeto:** Global Solution — 2º semestre de 2026
 
-**Monitoramento de múltiplas cidades:** acompanhamento de diferentes localidades brasileiras, com seleção de uma cidade principal.
+**Desafio:** Territory Predictive Insights
 
-**Análise ambiental contextualizada:** apresentação de indicadores, concentrações e tendências, em vez de apenas valores isolados.
-
-**Previsões atmosféricas:** consulta de projeções de poluentes em diferentes horizontes temporais.
-
-**Alertas transparentes:** diferenciação entre análises baseadas em previsões ambientais e cenários demonstrativos.
-
-**Acesso opcional com conta:** utilização como visitante ou sincronização de preferências com Firebase.
-
-**Persistência híbrida:** utilização de armazenamento local e serviços em nuvem conforme a necessidade.
-
-**Personalização visual:** temas claro, escuro e automático, acompanhando a preferência do usuário.
+**Repositório:** https://github.com/jalbino0/Aeris_Pulse
 
 ---
 
-## Funcionalidades implementadas
+## 3. Demonstração visual
 
-### 1. Monitoramento da qualidade do ar
+As capturas abaixo apresentam as principais telas do **Aeris Pulse em seu tema escuro**.
+
+A interface utiliza uma identidade visual própria, com tons de azul-petróleo, verde-menta e componentes organizados para favorecer a leitura e a navegação.
+
+### Galeria do aplicativo
+
+| Boas-vindas | Página inicial | Qualidade do ar |
+|:---:|:---:|:---:|
+| <img src="assets/screenshots/boas-vindas.png" alt="Tela de boas-vindas" width="235"> | <img src="assets/screenshots/home.png" alt="Página inicial" width="235"> | <img src="assets/screenshots/qualidade-ar.png" alt="Qualidade do ar" width="235"> |
+| **Análise de poluentes** | **Previsões atmosféricas** | **Alertas ambientais** |
+| <img src="assets/screenshots/poluentes.png" alt="Análise de poluentes" width="235"> | <img src="assets/screenshots/previsoes.png" alt="Previsões atmosféricas" width="235"> | <img src="assets/screenshots/alertas.png" alt="Alertas ambientais" width="235"> |
+| **Cidades e favoritos** | **Login** | **Cadastro** |
+| <img src="assets/screenshots/cidades.png" alt="Cidades favoritas" width="235"> | <img src="assets/screenshots/login.png" alt="Tela de login" width="235"> | <img src="assets/screenshots/cadastro.png" alt="Tela de cadastro" width="235"> |
+| **Minha conta** | **Configurações** | **Privacidade e dados** |
+| <img src="assets/screenshots/minha-conta.png" alt="Minha conta" width="235"> | <img src="assets/screenshots/configuracoes.png" alt="Configurações" width="235"> | <img src="assets/screenshots/privacidade.png" alt="Privacidade e dados" width="235"> |
+
+### Identidade visual
+
+O Aeris Pulse possui uma identidade visual desenvolvida para transmitir clareza, confiança e conexão com o monitoramento ambiental.
+
+Os principais elementos incluem:
+
+- Logotipo próprio.
+- Paleta de cores temática.
+- Hierarquia tipográfica consistente.
+- Cartões informativos e indicadores visuais.
+- Gráficos de evolução atmosférica.
+- Navegação inferior entre os principais módulos.
+- Ícones relacionados às funcionalidades.
+- Estados visuais de carregamento, seleção e erro.
+- Temas claro, escuro e automático.
+
+A interface foi desenvolvida para facilitar o acesso às informações e a interpretação dos resultados.
+
+---
+
+## 4. Funcionalidades implementadas
+
+### Checklist geral
+
+- [x] Monitoramento de qualidade do ar.
+- [x] Consulta de concentrações atmosféricas.
+- [x] Classificação de indicadores ambientais.
+- [x] Análise detalhada de poluentes.
+- [x] Visualização de histórico e tendências.
+- [x] Gráficos de evolução temporal.
+- [x] Previsões atmosféricas.
+- [x] Seleção de horizontes de previsão.
+- [x] Alertas preditivos.
+- [x] Justificativas e informações de transparência dos alertas.
+- [x] Modo demonstrativo de alertas.
+- [x] Notificações ambientais locais.
+- [x] Pesquisa de cidades brasileiras.
+- [x] Gerenciamento de cidades favoritas.
+- [x] Seleção da cidade monitorada.
+- [x] Cadastro e autenticação com Firebase.
+- [x] Recuperação de senha.
+- [x] Exclusão de conta.
+- [x] Acesso sem cadastro.
+- [x] Sincronização de preferências com Firestore.
+- [x] Armazenamento local com SQLite.
+- [x] Cache de informações ambientais.
+- [x] Tratamento de estados de carregamento e erro.
+- [x] Formulários com validação.
+- [x] Tema claro.
+- [x] Tema escuro.
+- [x] Tema automático.
+- [x] Persistência da preferência visual.
+- [x] Tela de privacidade e consentimento.
+- [x] Testes automatizados.
+- [x] Indicador de benefício social potencial, com antecedência estimada até o pico de poluentes.
+
+### 4.1. Monitoramento da qualidade do ar
 
 O aplicativo permite acompanhar informações ambientais relacionadas à cidade selecionada.
 
-Entre os recursos disponíveis estão:
+As funcionalidades incluem:
 
-- Exibição da cidade atualmente monitorada.
+- Identificação da cidade monitorada.
 - Consulta de concentrações atmosféricas estimadas.
-- Identificação da fonte dos dados utilizados.
-- Exibição do horário de referência das informações.
-- Apresentação de indicadores ambientais.
-- Classificação das condições conforme as regras implementadas no aplicativo.
+- Exibição da fonte das informações.
+- Apresentação do horário de referência.
+- Classificação dos indicadores ambientais.
+- Consulta de dados históricos disponíveis.
 - Acesso às análises detalhadas dos poluentes.
 
-O objetivo é facilitar a interpretação das condições ambientais apresentadas.
+O objetivo é permitir que o usuário compreenda as condições ambientais apresentadas sem depender exclusivamente de valores numéricos isolados.
 
-### 2. Análise de poluentes atmosféricos
+### 4.2. Análise de poluentes
 
-O Aeris Pulse oferece informações específicas sobre poluentes, incluindo:
+O Aeris Pulse oferece informações específicas sobre poluentes atmosféricos, incluindo:
 
-- **MP2,5:** material particulado fino.
-- **MP10:** material particulado inalável.
-- **Ozônio (O₃):** poluente atmosférico associado a processos fotoquímicos.
+**MP2,5:** material particulado fino.
 
-As telas de análise apresentam recursos como:
+**MP10:** material particulado inalável.
 
-- Concentrações estimadas dos poluentes.
-- Variação em relação a períodos anteriores.
-- Gráficos de evolução temporal.
-- Dados históricos disponíveis.
-- Indicadores estatísticos e tendências.
-- Informações de contexto sobre as concentrações apresentadas.
+**Ozônio (O₃):** poluente atmosférico associado a processos fotoquímicos.
 
-Os gráficos auxiliam na interpretação das mudanças atmosféricas ao longo do tempo.
+As telas permitem acompanhar:
 
-### 3. Previsões atmosféricas
+- Concentrações estimadas.
+- Variações temporais.
+- Gráficos de evolução.
+- Informações históricas disponíveis.
+- Indicadores estatísticos.
+- Tendências de concentração.
 
-O módulo de previsões permite analisar tendências futuras com base nos dados disponibilizados pelos serviços ambientais.
+As informações são apresentadas conforme a disponibilidade dos dados consultados.
+
+### 4.3. Previsões atmosféricas
+
+O módulo de previsões permite analisar tendências futuras com base em projeções ambientais.
 
 O usuário pode:
 
-- Selecionar o poluente em análise.
-- Consultar horizontes de 24, 48 e 72 horas.
-- Visualizar projeções de concentração.
-- Identificar períodos de maior concentração prevista.
-- Consultar horários e referências temporais.
-- Observar classificações estimadas para os cenários analisados.
+- Selecionar o poluente.
+- Escolher horizontes de 24, 48 ou 72 horas.
+- Consultar concentrações previstas.
+- Identificar períodos de maior concentração.
+- Visualizar classificações estimadas.
+- Acompanhar o horário de referência das projeções.
 
-As previsões são projeções de modelos atmosféricos e estão sujeitas a incertezas.
+As previsões representam resultados estimados pelos modelos consultados e estão sujeitas a incertezas.
 
-### 4. Alertas ambientais e análises preditivas
+### 4.4. Alertas ambientais
 
-O aplicativo disponibiliza uma central dedicada à interpretação de possíveis condições ambientais desfavoráveis.
+O aplicativo disponibiliza uma central de alertas para apresentar condições que possam exigir atenção.
 
-O módulo possui dois modos de funcionamento.
+A funcionalidade possui dois modos.
 
 **Modo Previsão**
 
-Utiliza informações provenientes das projeções atmosféricas para apresentar análises de condições futuras.
+Utiliza projeções atmosféricas para realizar análises preditivas.
 
-Entre os recursos estão:
+Os resultados são acompanhados de informações sobre:
 
-- Interpretação das projeções disponíveis.
-- Identificação de condições que merecem atenção.
-- Apresentação de informações sobre cobertura dos dados.
-- Comunicação das limitações das análises.
-- Identificação do período de referência utilizado.
+- Condições identificadas.
+- Evidências utilizadas.
+- Classificação do alerta.
+- Nível de confiança informado pela análise.
+- Cobertura dos dados.
+- Limitações e incertezas.
+- Período de referência.
 
 **Modo Demonstração**
 
-Permite explorar cenários ilustrativos de alertas.
+Permite explorar cenários ilustrativos de alertas ambientais.
 
-Os resultados desse modo são demonstrativos e não devem ser interpretados como condições ambientais reais.
+Esse modo foi desenvolvido para demonstrar o funcionamento da análise sem apresentar os resultados simulados como ocorrências reais.
 
-O aplicativo também oferece configurações para habilitar ou desabilitar a apresentação das análises preditivas.
-
-### 5. Notificações ambientais
+### 4.5. Notificações ambientais
 
 O Aeris Pulse possui integração com notificações locais do Android.
 
-As funcionalidades incluem:
+O usuário pode:
 
-- Ativação e desativação de notificações.
-- Solicitação das permissões necessárias.
-- Envio de notificações de teste.
-- Apresentação de mensagens sobre o estado das permissões.
-- Configuração independente da visualização dos alertas preditivos.
+- Habilitar ou desabilitar notificações.
+- Gerenciar a autorização necessária.
+- Enviar uma notificação de teste.
+- Consultar mensagens relacionadas às permissões.
 
-As notificações dependem das permissões do sistema e das condições de execução do aplicativo.
+A ativação das notificações não representa monitoramento contínuo com o aplicativo fechado.
 
-**A ativação desse recurso não representa monitoramento contínuo com o aplicativo fechado.**
+### 4.6. Cidades e favoritos
 
-### 6. Pesquisa e gerenciamento de cidades
+O aplicativo permite pesquisar e acompanhar diferentes cidades brasileiras.
 
-O aplicativo permite pesquisar localidades brasileiras e organizar cidades de interesse.
+Entre os recursos estão:
 
-Entre as funcionalidades estão:
+- Pesquisa de localidades.
+- Seleção da cidade principal.
+- Cadastro de cidades favoritas.
+- Remoção de favoritos.
+- Identificação da cidade monitorada.
+- Atualização das consultas ao alterar a cidade.
 
-- Pesquisa de cidades.
-- Exibição de informações de localização.
-- Seleção da cidade monitorada.
-- Cadastro e remoção de cidades favoritas.
-- Identificação visual da cidade ativa.
-- Atualização das consultas ambientais ao alterar a localidade.
+### 4.7. Autenticação e contas
 
-O usuário pode manter diferentes cidades favoritas e alternar entre elas conforme sua necessidade.
-
-### 7. Autenticação e gerenciamento de conta
-
-O Aeris Pulse utiliza **Firebase Authentication** para disponibilizar acesso autenticado.
+O aplicativo utiliza Firebase Authentication para permitir a criação e o gerenciamento de contas.
 
 As funcionalidades incluem:
 
 - Cadastro com nome, e-mail e senha.
-- Login com e-mail e senha.
+- Login.
 - Recuperação de senha.
 - Validação de campos.
-- Exibição de mensagens de erro.
-- Gerenciamento de informações da conta.
-- Encerramento de sessão.
-- Solicitação de exclusão de conta.
-- Acesso às informações de privacidade.
+- Mensagens de erro.
+- Encerramento da sessão.
+- Gerenciamento e exclusão de conta.
 
-O cadastro solicita a confirmação de leitura das informações de privacidade antes da criação da conta.
+### 4.8. Acesso como visitante
 
-### 8. Acesso como visitante
+O Aeris Pulse pode ser utilizado sem cadastro.
 
-A utilização do aplicativo não exige a criação de uma conta.
+Nesse modo, o usuário continua tendo acesso às funcionalidades ambientais e utiliza preferências mantidas localmente no dispositivo.
 
-No modo visitante, o usuário pode explorar os recursos ambientais e utilizar preferências mantidas localmente.
+A criação de uma conta é opcional.
 
-A autenticação é opcional e permite vincular determinadas informações ao usuário no Firebase.
+### 4.9. Sincronização de preferências
 
-Os dados locais de visitante permanecem separados das preferências sincronizadas em nuvem.
+Usuários autenticados podem utilizar o Cloud Firestore para armazenar informações associadas à conta.
 
-### 9. Sincronização com Firebase
+Entre elas:
 
-Para usuários autenticados, o aplicativo utiliza o **Cloud Firestore** para persistir informações relacionadas às preferências da conta.
+- Cidades favoritas.
+- Cidade monitorada.
+- Preferências relacionadas à experiência do usuário.
 
-Os recursos incluem:
+Os documentos são associados ao identificador da conta e protegidos pelas regras de acesso configuradas.
 
-- Armazenamento de cidades favoritas.
-- Persistência da cidade monitorada.
-- Recuperação de informações vinculadas à conta.
-- Separação dos dados por identificador de usuário.
-- Controle de acesso por regras de segurança do Firestore.
+### 4.10. Armazenamento local e cache
 
-A sincronização permite recuperar preferências associadas à conta em instalações devidamente configuradas.
+O aplicativo utiliza SQLite para persistir informações locais e armazenar respostas ambientais em cache.
 
-### 10. Armazenamento local e cache
+Isso permite:
 
-O Aeris Pulse utiliza armazenamento local com SQLite para persistência e cache.
+- Manter preferências de visitantes.
+- Reutilizar informações previamente consultadas.
+- Reduzir determinadas consultas repetidas.
+- Recuperar dados armazenados quando não há conexão.
 
-Entre suas aplicações estão:
+Novas atualizações ambientais dependem da disponibilidade dos serviços externos.
 
-- Armazenamento de preferências de visitante.
-- Persistência local de informações relacionadas às cidades.
-- Cache de respostas de consultas ambientais.
-- Reutilização de dados previamente obtidos.
-- Apoio ao funcionamento em situações de conectividade limitada.
-
-O cache reduz a necessidade de repetir determinadas consultas e permite recuperar informações anteriormente armazenadas.
-
-O aplicativo não substitui uma conexão com a internet para a obtenção de novos dados ambientais.
-
-### 11. Personalização da interface
+### 4.11. Personalização
 
 O aplicativo disponibiliza três opções de aparência:
 
-- **Claro:** utiliza a identidade visual clara.
-- **Escuro:** utiliza superfícies escuras e elementos de destaque em verde-menta.
-- **Automático:** acompanha a configuração de aparência do sistema.
+- **Claro:** identidade visual clara.
+- **Escuro:** superfícies escuras e destaques em verde-menta.
+- **Automático:** acompanha a configuração do sistema.
 
-A preferência selecionada é persistida para as próximas utilizações.
-
-A interface foi organizada com componentes reutilizáveis, hierarquia visual consistente e adaptação das principais telas.
+A preferência selecionada é mantida para utilizações posteriores.
 
 ---
 
-## Tecnologias utilizadas
+## 5. Dados, modelos e alertas preditivos
 
-| Tecnologia | Aplicação no projeto |
+### 5.1. Fontes de dados
+
+O Aeris Pulse utiliza dados e estimativas atmosféricas disponibilizados por serviços externos, incluindo **Open-Meteo/CAMS**.
+
+Esses serviços permitem consultar informações relacionadas à composição atmosférica e a projeções ambientais.
+
+Os dados podem incluir concentrações estimadas de diferentes poluentes ao longo do tempo.
+
+A aplicação utiliza essas informações para alimentar os indicadores, gráficos, previsões e análises apresentadas na interface.
+
+### 5.2. Processamento das informações
+
+As respostas provenientes dos serviços ambientais são tratadas pelos módulos de dados e domínio do aplicativo.
+
+O processamento envolve:
+
+1. Solicitação das informações para a cidade selecionada.
+2. Recebimento das respostas dos serviços externos.
+3. Organização dos dados por poluente e período.
+4. Tratamento de valores e referências temporais.
+5. Aplicação das regras de análise ambiental.
+6. Cálculo dos indicadores e tendências implementados.
+7. Disponibilização dos resultados para as telas.
+8. Armazenamento em cache quando aplicável.
+
+### 5.3. Indicadores e métricas utilizados
+
+Entre os indicadores apresentados ou utilizados nas análises estão:
+
+| Indicador | Finalidade |
 |---|---|
-| **Flutter** | Desenvolvimento mobile multiplataforma |
-| **Dart** | Implementação da aplicação e regras de negócio |
-| **Riverpod** | Gerenciamento de estado e integração entre funcionalidades |
-| **GoRouter** | Organização de rotas e navegação |
-| **Firebase Authentication** | Cadastro, autenticação e gerenciamento de usuários |
-| **Cloud Firestore** | Persistência e sincronização de preferências |
-| **SQLite** | Armazenamento local e cache |
-| **Open-Meteo / CAMS** | Consulta de dados e estimativas atmosféricas |
-| **Android Notifications** | Notificações ambientais locais |
-| **Git e GitHub** | Versionamento e publicação do código |
+| Concentração de MP2,5 | Acompanhamento de material particulado fino |
+| Concentração de MP10 | Acompanhamento de material particulado inalável |
+| Concentração de O₃ | Acompanhamento de ozônio atmosférico |
+| Variação temporal | Comparação de concentrações entre períodos |
+| Histórico de concentrações | Visualização da evolução das condições |
+| Médias móveis | Análise de tendências e projeções |
+| Maior concentração média prevista | Identificação de períodos desfavoráveis |
+| Classificação ambiental | Contextualização dos indicadores |
+| Cobertura dos dados | Identificação da disponibilidade de informações |
+| Confiança da análise | Comunicação das limitações da interpretação |
+
+As métricas apresentadas não devem ser confundidas automaticamente com medições oficiais ou com uma avaliação estatística de acurácia do modelo.
+
+### 5.4. Geração dos alertas
+
+Os alertas preditivos são produzidos por regras de análise aplicadas aos dados atmosféricos e às projeções disponíveis.
+
+O processamento considera as informações ambientais utilizadas pela aplicação, as classificações implementadas e os períodos analisados.
+
+O resultado busca identificar cenários que possam exigir atenção.
+
+Cada alerta apresenta informações que auxiliam na interpretação, incluindo:
+
+- Condição identificada.
+- Evidência ou justificativa.
+- Classificação do cenário.
+- Informação de confiança.
+- Limitações da análise.
+- Período correspondente.
+
+### 5.5. Transparência e confiança
+
+O Aeris Pulse apresenta informações sobre a confiabilidade e as limitações de suas análises.
+
+A disponibilidade dos dados pode ser indicada por métricas de cobertura, como a quantidade de períodos válidos em relação ao total solicitado.
+
+**Cobertura de dados não equivale à precisão da previsão.**
+
+A existência de uma série temporal completa não significa que a projeção tenha sido validada por medições locais.
+
+O nível de confiança apresentado deve ser interpretado conforme a metodologia implementada e suas limitações.
+
+Não se deve assumir uma probabilidade estatística de acerto sem validação quantitativa correspondente.
+
+### 5.6. Limitações dos modelos
+
+As informações apresentadas podem representar estimativas produzidas por modelos atmosféricos.
+
+Entre suas limitações estão:
+
+- Resolução espacial dos dados.
+- Diferenças entre condições regionais e locais.
+- Incerteza associada às projeções futuras.
+- Possíveis lacunas nas séries temporais.
+- Diferenças entre estimativas e medições de sensores.
+- Dependência da disponibilidade dos serviços externos.
+- Possibilidade de atualização ou revisão das previsões.
+
+As condições reais de uma localidade específica podem diferir das estimativas disponíveis.
+
+### 5.7. Possíveis vieses e fontes de incerteza
+
+A utilização de modelos atmosféricos pode envolver limitações relacionadas à representatividade geográfica e temporal.
+
+Por exemplo, uma estimativa regional pode não representar com exatidão as condições de uma rua ou bairro.
+
+Também podem existir diferenças de cobertura e disponibilidade entre localidades e períodos.
+
+Essas limitações devem ser consideradas durante a interpretação dos indicadores.
+
+### 5.8. Quando as previsões não são confiáveis
+
+O usuário deve ter cautela especialmente quando:
+
+- Os dados estiverem incompletos ou desatualizados.
+- A cobertura das informações for insuficiente.
+- Houver falha de comunicação com o serviço externo.
+- A localidade apresentar condições muito específicas não representadas pela resolução dos dados.
+- A previsão estiver sendo utilizada como substituta de medições oficiais.
+- Não houver validação local que permita quantificar a precisão das projeções.
+
+### 5.9. Supervisão humana
+
+Os alertas ambientais apresentados pelo Aeris Pulse possuem finalidade informativa.
+
+O aplicativo não realiza decisões automáticas de alto impacto.
+
+**A decisão final deve permanecer sob responsabilidade humana**, considerando as condições locais, as informações disponíveis e as orientações das autoridades competentes.
 
 ---
 
-## Arquitetura do aplicativo
+## 6. Privacidade, inclusão e acessibilidade
 
-O Aeris Pulse utiliza uma organização modular, separando as funcionalidades do sistema em diretórios específicos.
+### 6.1. Privacidade dos usuários
 
-Essa estrutura facilita a manutenção, a evolução e os testes do aplicativo.
+O Aeris Pulse permite utilização sem cadastro, reduzindo a necessidade de fornecimento de informações pessoais para acessar as funcionalidades ambientais.
 
-### Estrutura principal
+A autenticação é opcional.
+
+Ao optar pelo cadastro, o usuário informa nome, e-mail e senha.
+
+A autenticação é processada pelo Firebase Authentication.
+
+### 6.2. Proteção de dados
+
+O aplicativo utiliza mecanismos de armazenamento diferentes conforme o modo de acesso.
+
+| Tipo de informação | Serviço utilizado |
+|---|---|
+| Identidade e autenticação | Firebase Authentication |
+| Favoritos de usuário autenticado | Cloud Firestore |
+| Cidade monitorada de usuário autenticado | Cloud Firestore |
+| Preferências de visitante | SQLite local |
+| Cache ambiental | Armazenamento local |
+
+Os documentos associados aos usuários autenticados são organizados por identificador de conta, com controle de acesso por regras do Firebase.
+
+As senhas não são armazenadas nos documentos de favoritos ou preferências do Firestore.
+
+### 6.3. Consentimento
+
+O cadastro possui uma etapa de consentimento explícito.
+
+Antes de criar a conta, o usuário deve confirmar a leitura das informações de privacidade e concordar com o tratamento das informações necessárias à autenticação e à sincronização de preferências.
+
+O aplicativo disponibiliza uma tela específica para consulta dessas informações.
+
+### 6.4. Gerenciamento e exclusão de conta
+
+Usuários autenticados podem solicitar a exclusão da conta diretamente pelo aplicativo.
+
+O processo envolve confirmação da identidade e operações relacionadas à exclusão dos dados associados à conta.
+
+A exclusão da conta em nuvem não significa necessariamente a remoção de todos os arquivos locais ou dados armazenados em cache.
+
+### 6.5. Inclusão digital
+
+O Aeris Pulse foi desenvolvido para permitir o acesso às informações ambientais mesmo sem cadastro.
+
+Essa característica reduz barreiras de entrada e permite explorar as funcionalidades principais sem a necessidade de criar uma conta.
+
+A interface também busca apresentar dados técnicos em linguagem compreensível, associando informações numéricas a classificações, gráficos e descrições.
+
+### 6.6. Acessibilidade
+
+A interface foi desenvolvida considerando recursos como:
+
+- Contraste entre textos e superfícies.
+- Hierarquia tipográfica.
+- Identificação visual dos elementos interativos.
+- Mensagens de validação e erro.
+- Componentes reutilizáveis.
+- Organização das informações por seções.
+- Legibilidade com ampliação de texto.
+- Adaptação a diferentes dimensões de tela.
+
+Durante a validação visual, foram conferidos os temas, o contraste, a ampliação de fontes e a apresentação em diferentes tamanhos de tela.
+
+Os controles que possuem descrições semânticas específicas contribuem para a identificação de suas funcionalidades por recursos de acessibilidade.
+
+### 6.7. Benefício social
+
+O Aeris Pulse apresenta um indicador de benefício social potencial, calculado a partir da antecedência estimada entre o horário de referência da previsão e o pico previsto de concentração de poluentes. Por exemplo, o aplicativo pode identificar 10 horas de antecedência até um pico de MP2,5, oferecendo uma janela potencial para planejamento preventivo. Esse indicador não representa impacto social diretamente medido e está sujeito às incertezas da previsão.
+
+---
+
+## 7. Tecnologias, arquitetura e decisões técnicas
+
+### 7.1. Tecnologias utilizadas
+
+| Tecnologia | Aplicação | Justificativa |
+|---|---|---|
+| **Flutter** | Desenvolvimento mobile | Permite construir interfaces com componentes reutilizáveis e identidade visual consistente |
+| **Dart** | Implementação da aplicação | Linguagem utilizada pelo Flutter, com suporte a programação assíncrona e orientação a objetos |
+| **Riverpod** | Gerenciamento de estado | Organiza estados compartilhados e dependências entre funcionalidades |
+| **GoRouter** | Navegação | Facilita a definição de rotas e a organização dos fluxos de telas |
+| **Firebase Authentication** | Autenticação | Disponibiliza cadastro, login e gerenciamento de usuários |
+| **Cloud Firestore** | Persistência em nuvem | Permite armazenar e recuperar preferências vinculadas às contas |
+| **SQLite** | Armazenamento local | Possibilita persistência estruturada e cache no dispositivo |
+| **Open-Meteo/CAMS** | Dados atmosféricos | Disponibiliza estimativas e projeções ambientais para consulta |
+| **Notificações Android** | Avisos locais | Permite apresentar notificações conforme permissões do dispositivo |
+| **Git e GitHub** | Versionamento | Organiza e disponibiliza o código-fonte do projeto |
+
+### 7.2. Organização da arquitetura
+
+O Aeris Pulse possui uma estrutura modular, separando funcionalidades e responsabilidades.
 
 ```text
 lib/
@@ -323,143 +594,169 @@ lib/
 └── main.dart
 ```
 
-### Organização das responsabilidades
+### 7.3. Responsabilidades das camadas
 
 **app/**
 
-Contém componentes relacionados à estrutura principal do aplicativo, incluindo a organização da navegação e das áreas acessíveis ao usuário.
+Contém componentes associados à estrutura principal da aplicação, incluindo a organização da navegação.
 
 **core/**
 
-Reúne recursos compartilhados entre diferentes funcionalidades, como regras ambientais, comunicação com serviços externos, cache, armazenamento, temas e componentes reutilizáveis.
+Reúne recursos compartilhados, como regras ambientais, comunicação com serviços externos, armazenamento, providers, temas e widgets reutilizáveis.
 
 **features/**
 
-Organiza as funcionalidades em módulos independentes, facilitando a separação das responsabilidades.
+Contém os módulos funcionais do sistema.
 
-**main.dart**
-
-Representa o ponto de entrada da aplicação.
-
-### Organização dos módulos
-
-Os módulos podem conter diretórios como:
+Os módulos podem ser organizados em:
 
 | Diretório | Responsabilidade |
 |---|---|
 | `data/` | Serviços, modelos e mecanismos de persistência |
-| `domain/` | Regras de negócio e processamento de informações |
+| `domain/` | Regras de negócio e processamento |
 | `presentation/` | Telas e componentes visuais |
-| `providers/` | Estado e integração entre as camadas |
+| `providers/` | Estado e integração entre funcionalidades |
 
-Essa organização permite manter a lógica de interface separada de parte das regras de negócio e dos mecanismos de acesso aos dados.
+**main.dart**
 
-### Fluxo geral das informações
+Ponto de entrada da aplicação.
 
-O funcionamento do aplicativo pode ser resumido nas seguintes etapas:
+### 7.4. Fluxo de dados
+
+O funcionamento geral da aplicação envolve:
 
 1. O usuário seleciona uma funcionalidade ou cidade.
-2. A interface consulta os estados e provedores necessários.
-3. Os serviços responsáveis verificam as informações disponíveis.
-4. Quando necessário, são realizadas consultas às fontes externas.
-5. Os dados recebidos são processados e disponibilizados para a interface.
-6. Informações elegíveis podem ser armazenadas em cache.
-7. Preferências são persistidas localmente ou no Firestore, conforme o modo de acesso.
-8. As telas apresentam os resultados em indicadores, gráficos, cartões e análises.
+2. A interface consulta os estados necessários.
+3. Os providers coordenam as informações utilizadas.
+4. Os serviços verificam dados disponíveis localmente ou realizam consultas externas.
+5. As respostas são processadas pelas regras implementadas.
+6. Os resultados são disponibilizados para a interface.
+7. As informações elegíveis são armazenadas em cache.
+8. As preferências são persistidas localmente ou sincronizadas com o Firestore.
+9. As telas apresentam os resultados por meio de gráficos, cartões, indicadores e alertas.
 
-### Persistência de informações
+### 7.5. Decisões de arquitetura
 
-| Informação | Armazenamento |
-|---|---|
-| Preferências de cidades do visitante | SQLite local |
-| Cidade monitorada do visitante | SQLite local |
-| Favoritos de usuário autenticado | Cloud Firestore |
-| Cidade monitorada de usuário autenticado | Cloud Firestore |
-| Respostas ambientais em cache | Armazenamento local |
-| Autenticação e identidade | Firebase Authentication |
-| Preferência de aparência | Persistência local |
+**Organização modular**
 
-A utilização de armazenamento local e serviços em nuvem permite oferecer diferentes experiências sem exigir autenticação obrigatória.
+A separação por funcionalidades facilita a manutenção e a evolução independente dos módulos.
+
+**Gerenciamento de estado com Riverpod**
+
+O Riverpod permite compartilhar informações entre diferentes telas e separar parte da lógica da interface.
+
+**Persistência híbrida**
+
+SQLite e Firestore são utilizados para atender necessidades distintas de armazenamento.
+
+**Autenticação opcional**
+
+O acesso como visitante permite utilizar o aplicativo sem criar uma conta.
+
+**Cache ambiental**
+
+O armazenamento de informações previamente consultadas reduz determinadas requisições repetidas e aumenta a utilidade do aplicativo em situações de conectividade limitada.
+
+**Identidade visual própria**
+
+O uso de tema centralizado e componentes reutilizáveis contribui para a consistência da experiência.
+
+### 7.6. Testes automatizados
+
+O projeto possui testes destinados a validar regras e comportamentos da aplicação.
+
+Entre os assuntos cobertos estão:
+
+- Análise de qualidade do ar.
+- Classificações ambientais.
+- Estatísticas de poluentes.
+- Análises de previsões.
+- Tratamento de horários e fusos.
+- Regras de alertas.
+- Validação de alertas seguros.
+- Pesquisa de cidades.
+- Seleção da cidade monitorada.
+- Preferências de entrada.
+- Armazenamento em cache.
+- Cache de múltiplas cidades.
+- Atualização global de dados.
+- Componentes de interface.
+
+### 7.7. Validação do aplicativo
+
+O Aeris Pulse foi executado em ambiente Flutter para verificar seu funcionamento.
+
+Foram utilizados os seguintes comandos de validação:
+
+```bash
+flutter analyze
+flutter test
+flutter run
+```
+
+Também foram realizadas verificações visuais da interface, incluindo temas claro e escuro, contraste, ampliação de texto e apresentação em diferentes dimensões de tela.
+
+### 7.8. Desafios e aprendizados
+
+O desenvolvimento permitiu aplicar conhecimentos relacionados a:
+
+- Integração com serviços externos.
+- Tratamento e apresentação de dados ambientais.
+- Gerenciamento de estado com Riverpod.
+- Desenvolvimento de interfaces em Flutter.
+- Navegação entre múltiplas telas.
+- Persistência com SQLite.
+- Integração com Firebase.
+- Autenticação e privacidade.
+- Cache e funcionamento com conectividade limitada.
+- Análises temporais e alertas preditivos.
+- Testes automatizados.
+- Versionamento e documentação técnica.
+
+Esses conhecimentos foram aplicados na construção de uma solução que integra funcionalidades de interface, processamento de informações e serviços externos.
 
 ---
 
-## Galeria do aplicativo
-
-As capturas abaixo apresentam as principais telas do **Aeris Pulse em seu tema escuro**.
-
-As imagens estão organizadas em três colunas para facilitar a visualização da interface.
-
-| Boas-vindas | Página inicial | Qualidade do ar |
-|:---:|:---:|:---:|
-| <img src="assets/screenshots/boas-vindas.png" alt="Tela de boas-vindas" width="235"> | <img src="assets/screenshots/home.png" alt="Página inicial" width="235"> | <img src="assets/screenshots/qualidade-ar.png" alt="Qualidade do ar" width="235"> |
-| **Análise de poluentes** | **Previsões atmosféricas** | **Alertas ambientais** |
-| <img src="assets/screenshots/poluentes.png" alt="Análise de poluentes" width="235"> | <img src="assets/screenshots/previsoes.png" alt="Previsões atmosféricas" width="235"> | <img src="assets/screenshots/alertas.png" alt="Alertas ambientais" width="235"> |
-| **Cidades e favoritos** | **Login** | **Cadastro** |
-| <img src="assets/screenshots/cidades.png" alt="Cidades favoritas" width="235"> | <img src="assets/screenshots/login.png" alt="Tela de login" width="235"> | <img src="assets/screenshots/cadastro.png" alt="Tela de cadastro" width="235"> |
-| **Minha conta** | **Configurações** | **Privacidade e dados** |
-| <img src="assets/screenshots/minha-conta.png" alt="Minha conta" width="235"> | <img src="assets/screenshots/configuracoes.png" alt="Configurações" width="235"> | <img src="assets/screenshots/privacidade.png" alt="Privacidade e dados" width="235"> |
-
----
-
-## Demonstração em vídeo
-
-O vídeo de apresentação demonstra o funcionamento do Aeris Pulse e suas principais funcionalidades.
-
-A demonstração contempla recursos como:
-
-- Navegação entre as telas.
-- Monitoramento da qualidade do ar.
-- Consulta de poluentes.
-- Análise de previsões.
-- Alertas ambientais.
-- Pesquisa e gerenciamento de cidades.
-- Autenticação e acesso como visitante.
-- Configurações e personalização da interface.
-
-**Vídeo de apresentação no YouTube:** link a adicionar após a publicação.
-
----
-
-## Como executar o projeto
+## 8. Como executar
 
 ### Pré-requisitos
 
 Para executar o Aeris Pulse localmente, são necessários:
 
 - Flutter SDK instalado e configurado.
-- Android SDK e ferramentas de desenvolvimento.
+- Android SDK.
 - Android Studio ou Visual Studio Code.
 - Emulador Android ou dispositivo físico.
-- Acesso à internet para consultas ambientais.
-- Projeto Firebase configurado para a aplicação.
+- Projeto Firebase configurado.
+- Conexão com a internet para consultas ambientais atualizadas.
 
 O Dart SDK acompanha a instalação do Flutter.
 
-### 1. Clonar o repositório
+### 8.1. Clonar o repositório
 
 ```bash
 git clone https://github.com/jalbino0/Aeris_Pulse.git
 ```
 
-### 2. Acessar a pasta do projeto
+### 8.2. Acessar a pasta
 
 ```bash
 cd Aeris_Pulse
 ```
 
-### 3. Instalar as dependências
+### 8.3. Instalar as dependências
 
 ```bash
 flutter pub get
 ```
 
-### 4. Configurar o Firebase
+### 8.4. Configurar o Firebase
 
-O aplicativo utiliza serviços do Firebase para autenticação e sincronização de preferências.
+O aplicativo utiliza Firebase Authentication e Cloud Firestore.
 
 Para executar o projeto, é necessário configurar uma aplicação Firebase compatível.
 
-Os arquivos de configuração específicos do ambiente não são disponibilizados neste repositório.
+Os arquivos específicos da configuração Firebase não são disponibilizados neste repositório.
 
 Entre eles:
 
@@ -474,251 +771,107 @@ A configuração pode ser realizada com o FlutterFire CLI:
 flutterfire configure
 ```
 
-Também é necessário habilitar e configurar os serviços utilizados, incluindo Firebase Authentication e Cloud Firestore.
+Também é necessário habilitar os serviços utilizados e configurar as regras de segurança do Firestore.
 
-As regras de segurança do Firestore devem restringir o acesso aos documentos associados a cada usuário autenticado.
+As regras devem restringir o acesso aos documentos associados a cada usuário autenticado.
 
-**Importante:** os arquivos privados, chaves de assinatura, arquivos de ambiente e pacotes Android gerados são excluídos do versionamento conforme as regras do `.gitignore`.
-
-### 5. Verificar os dispositivos disponíveis
+### 8.5. Verificar os dispositivos disponíveis
 
 ```bash
 flutter devices
 ```
 
-### 6. Executar o aplicativo
+### 8.6. Executar o aplicativo
 
 ```bash
 flutter run
 ```
 
-A execução pode ser realizada em um dispositivo Android físico ou em um emulador devidamente configurado.
+### 8.7. Executar os testes
 
----
-
-## Testes e validação
-
-O projeto possui testes automatizados para diferentes componentes e regras de negócio.
-
-### Análise estática
-
-Para verificar possíveis problemas identificados pelo analisador do Dart:
+Para realizar a análise estática:
 
 ```bash
 flutter analyze
 ```
 
-### Testes automatizados
-
-Para executar a suíte de testes:
+Para executar os testes automatizados:
 
 ```bash
 flutter test
 ```
 
-### Formatação
-
-Para aplicar a formatação padrão do Dart:
+Para formatar o código:
 
 ```bash
 dart format lib
 ```
 
-### Áreas cobertas pelos testes
+### 8.8. Gerar o APK
 
-O projeto contém testes relacionados a:
+Para compilar uma versão Release do aplicativo:
 
-- Análises de qualidade do ar.
-- Regras de classificação ambiental.
-- Processamento de informações de poluentes.
-- Estatísticas ambientais.
-- Mecanismos de alertas.
-- Validação de alertas seguros.
-- Análises de previsões.
-- Tratamento de horários e fusos.
-- Consultas e pesquisa de cidades.
-- Seleção de cidade monitorada.
-- Persistência de preferências.
-- Armazenamento em cache.
-- Consultas com cache em múltiplas cidades.
-- Atualização global de informações.
-- Componentes de interface.
+```bash
+flutter build apk --release
+```
 
-### Validação funcional
+Após uma compilação bem-sucedida, o APK é disponibilizado normalmente em:
 
-A aplicação também foi executada em ambiente Flutter para verificar a integração e a navegação entre as telas.
+```text
+build/app/outputs/flutter-apk/app-release.apk
+```
 
-Foram conferidos visualmente os temas claro e escuro, incluindo elementos de interface, contrastes, botões, campos de entrada e cartões informativos.
+O APK precisa ser testado e possuir uma configuração de assinatura adequada à distribuição pretendida.
 
-A existência dos testes automatizados não elimina a necessidade de validação das integrações externas e das permissões específicas do dispositivo Android.
+Os arquivos de instalação não são versionados diretamente junto ao código-fonte.
+
+Uma versão instalável poderá ser disponibilizada por meio do recurso **GitHub Releases**.
 
 ---
 
-## Privacidade e gerenciamento de dados
+## 9. Vídeo de demonstração
 
-O Aeris Pulse foi desenvolvido com autenticação opcional.
+O vídeo apresenta o funcionamento do Aeris Pulse e suas principais funcionalidades.
 
-O usuário pode acessar informações ambientais sem criar uma conta, utilizando recursos de armazenamento local.
+A demonstração deverá contemplar:
 
-Ao optar pelo cadastro, informações relacionadas à conta e às preferências sincronizadas passam a ser gerenciadas pelos serviços Firebase utilizados.
+- Apresentação do aplicativo.
+- Navegação entre as telas principais.
+- Monitoramento da qualidade do ar.
+- Consulta de poluentes.
+- Visualização de previsões.
+- Demonstração de um alerta e de sua justificativa.
+- Informações de confiança e limitações.
+- Pesquisa e seleção de cidades.
+- Autenticação e acesso como visitante.
+- Personalização e configurações.
 
-### Informações de autenticação
+A apresentação será acompanhada de narração ou legendas explicativas.
 
-O cadastro utiliza nome, e-mail e senha.
+**Duração máxima:** 3 minutos.
 
-A autenticação é processada pelo Firebase Authentication.
-
-A senha não é armazenada nos documentos de favoritos ou preferências do Cloud Firestore.
-
-### Informações sincronizadas
-
-Para usuários autenticados, informações como cidades favoritas e cidade monitorada podem ser associadas à conta.
-
-### Dados locais
-
-O aplicativo também utiliza armazenamento local para preferências de visitante e cache ambiental.
-
-A exclusão da conta em nuvem não significa necessariamente a exclusão de todos os arquivos locais do dispositivo.
-
-### Exclusão de conta
-
-Usuários autenticados podem solicitar a exclusão da conta pelo aplicativo.
-
-O processo inclui confirmação de identidade e operações de remoção relacionadas aos dados associados à conta.
-
-O aplicativo disponibiliza uma tela específica para apresentar informações sobre privacidade e gerenciamento de dados.
+**Link do vídeo no YouTube:** a adicionar após a publicação.
 
 ---
 
-## Fontes e interpretação dos dados ambientais
+## 10. Licença e finalidade acadêmica
 
-O Aeris Pulse utiliza dados e estimativas disponibilizados por serviços ambientais externos, incluindo **Open-Meteo/CAMS**.
+O **Aeris Pulse** foi desenvolvido para fins acadêmicos no contexto da **Global Solution 2026.2 da FIAP**, no curso de Ciência da Computação.
 
-Essas informações permitem apresentar concentrações atmosféricas e projeções temporais conforme a disponibilidade dos serviços consultados.
+O projeto corresponde ao desafio **Territory Predictive Insights**, da disciplina de Cross-Platform Application Development.
 
-### Limitações importantes
-
-**Dados estimados**
-
-As concentrações apresentadas podem representar estimativas provenientes de modelos atmosféricos.
-
-**Não equivalência a medições oficiais**
-
-As informações não devem ser interpretadas automaticamente como medições realizadas por estações oficiais, incluindo estações da CETESB.
-
-**Incerteza das previsões**
-
-As projeções futuras estão sujeitas às limitações dos modelos, da resolução espacial e da disponibilidade dos dados.
-
-**Cobertura e disponibilidade**
-
-A disponibilidade das informações pode variar conforme a cidade, o poluente, o período e as condições de comunicação com os serviços externos.
-
-**Alertas demonstrativos**
-
-Os cenários demonstrativos são ilustrativos e não representam necessariamente situações ambientais reais.
-
-**Notificações**
-
-As notificações locais dependem das permissões do Android e das condições de execução do aplicativo.
-
-**Funcionamento offline**
-
-O armazenamento local pode disponibilizar dados previamente consultados, mas não garante atualização das informações sem conexão.
-
-O Aeris Pulse possui finalidade informativa e não substitui orientações de órgãos ambientais, autoridades de saúde ou serviços oficiais de monitoramento.
-
----
-
-## Desafios e aprendizados
-
-O desenvolvimento do Aeris Pulse envolveu a aplicação de diferentes conhecimentos de Ciência da Computação e engenharia de software.
-
-### Integração de serviços externos
-
-A utilização de dados atmosféricos exigiu a organização das consultas, o tratamento das respostas e a disponibilização das informações para diferentes telas.
-
-### Gerenciamento de estado
-
-O Riverpod foi utilizado para organizar estados da aplicação, conectar funcionalidades e atualizar a interface conforme a disponibilidade das informações.
-
-### Persistência local e em nuvem
-
-A combinação entre SQLite e Firebase permitiu trabalhar com estratégias diferentes de armazenamento, de acordo com o modo de utilização.
-
-### Autenticação e privacidade
-
-A implementação de cadastro, login, recuperação de senha e exclusão de conta envolveu conceitos de autenticação e gerenciamento de dados associados ao usuário.
-
-### Análise de informações ambientais
-
-O processamento de concentrações, séries temporais e previsões permitiu aplicar regras de negócio e construir representações visuais contextualizadas.
-
-### Desenvolvimento de interfaces
-
-A implementação dos temas claro e escuro, da navegação e dos componentes reutilizáveis permitiu trabalhar princípios de consistência visual, responsividade e experiência do usuário.
-
-### Testes e qualidade de software
-
-A construção de testes automatizados auxiliou na validação de regras e comportamentos específicos, contribuindo para a manutenção e evolução do projeto.
-
----
-
-## Entrega do projeto
-
-A entrega do Aeris Pulse contempla os seguintes componentes:
-
-| Item | Descrição |
-|---|---|
-| **Código-fonte** | Aplicação Flutter organizada em módulos |
-| **Interface mobile** | Telas de monitoramento, análise, conta e configurações |
-| **Integração ambiental** | Consultas a serviços de dados atmosféricos |
-| **Autenticação** | Firebase Authentication |
-| **Persistência** | SQLite e Cloud Firestore |
-| **Análises e alertas** | Previsões, classificações e notificações locais |
-| **Testes** | Arquivos de testes automatizados |
-| **Documentação** | README com informações técnicas |
-| **Capturas de tela** | Galeria com 12 imagens do aplicativo |
-| **Vídeo demonstrativo** | Seção reservada ao link do YouTube |
-
-Os arquivos de instalação utilizados para testes não fazem parte do repositório de código-fonte.
-
----
-
-## Equipe de desenvolvimento
-
-Projeto desenvolvido pelos seguintes integrantes:
-
-| Integrante | Registro acadêmico |
-|---|---|
-| **João Pedro de Moura Albino** | **RM565323** |
-| **Kauê Silva Matheus** | **RM561675** |
-| **Giovanna Fernandes Pereira** | **RM565434** |
-
-**Instituição:** FIAP — Faculdade de Informática e Administração Paulista
-
-**Curso:** Ciência da Computação
-
-**Projeto:** Global Solution — 2º semestre de 2026
-
----
-
-## Licença e finalidade acadêmica
-
-O Aeris Pulse foi desenvolvido para fins acadêmicos no contexto da Global Solution da FIAP.
-
-O repositório disponibiliza o código-fonte e a documentação do projeto para apresentação e avaliação.
+O repositório disponibiliza o código-fonte e a documentação do aplicativo para apresentação e avaliação.
 
 Não foi definida uma licença de software específica neste repositório.
 
----
-
-## Repositório
-
-**Aeris Pulse — GitHub**
-
-https://github.com/jalbino0/Aeris_Pulse
+O projeto possui finalidade educacional e demonstrativa, e suas informações ambientais não substituem serviços oficiais de monitoramento ou orientações de autoridades competentes.
 
 ---
 
-**Aeris Pulse — Inteligência no ar. Clareza na vida.**
+<p align="center">
+  <strong>Aeris Pulse — Inteligência no ar. Clareza na vida.</strong>
+</p>
+
+<p align="center">
+  Desenvolvido por João Pedro de Moura Albino, Kauê Silva Matheus e Giovanna Fernandes Pereira.
+</p>
