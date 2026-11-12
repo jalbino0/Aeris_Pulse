@@ -1,0 +1,69 @@
+
+name: aeris_pulse
+description: "Aeris Pulse - Monitoramento inteligente da qualidade do ar."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^3.5.0
+  go_router: ^18.1.3
+  http: ^1.6.0
+  fl_chart: ^1.3.0
+  shared_preferences: ^2.5.6
+  sqflite: ^2.4.5
+  path: ^1.9.1
+  google_fonts: ^9.0.0
+  material_ui: ^1.10.0
+  firebase_core: ^5.1.0
+  firebase_auth: ^7.0.1
+  cloud_firestore: ^7.1.0
+  flutter_local_notifications: ^22.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/aeris_logo.png
+    - assets/images/aeris_logo_white.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/images/aeris_logo_white.png
+  adaptive_icon_background: "#073B40"
+  adaptive_icon_foreground: assets/images/aeris_logo_white.png
+  adaptive_icon_foreground_inset: 18
+  min_sdk_android: 21
+
+flutter_native_splash:
+  android: true
+  ios: false
+  web: false
+  color: "#073B40"
+  color_dark: "#073B40"
+  image: assets/images/aeris_logo_white.png
+  image_dark: assets/images/aeris_logo_white.png
+  android_12:
+    color: "#073B40"
+    color_dark: "#073B40"
+    image: assets/images/aeris_logo_white.png
+    image_dark: assets/images/aeris_logo_white.png
+    icon_background_color: "#073B40"
+    icon_background_color_dark: "#073B40"
